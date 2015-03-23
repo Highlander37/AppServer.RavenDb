@@ -82,7 +82,7 @@ namespace Inceptum.AppServer.Raven
             store.Configuration.MemoryCacheLimitMegabytes = 256;
             store.Configuration.Settings["Raven/Esent/CacheSizeMax"] = "256";
             store.Configuration.Settings["Raven/Esent/MaxVerPages"] = "128";
-            store.Configuration.MaxNumberOfItemsToIndexInSingleBatch = 1024;
+            //store.Configuration.MaxNumberOfItemsToIndexInSingleBatch = 1024;
             store.Configuration.DisableClusterDiscovery = true;
 
             

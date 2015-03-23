@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Inceptum.AppServer.RavenDb</id>
+    <id>Inceptum.AppServer.RavenDb3</id>
     <version>$version$</version>
     <title>Inceptum.AppServer.RavenDb</title>
     <authors>InceptumSoft</authors>
