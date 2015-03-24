@@ -18,11 +18,15 @@ namespace Inceptum.AppServer.Raven
         private readonly ILogger m_Logger;
         private readonly Assembly[] m_IndexLookupAssemblies;
         private Lazy<EmbeddableDocumentStore> m_Store;
-        public RavenBootstrapper(IConfigurationProvider configurationProvider,ILogger logger)
+        public RavenBootstrapper(RavenConfig config, ILogger logger)
         {
             Assembly[] indexLookupAssemblies = null;
             if (logger == null) throw new ArgumentNullException("logger");
             m_Logger = logger;
+            if (config.BaseDir == null)
+                config.BaseDir = Path.GetFullPath("./Raven");
+            m_Config = config;
+/*
             try
             {
                 
@@ -48,6 +52,7 @@ namespace Inceptum.AppServer.Raven
                     WebUIEnabled = true
                 };
             }
+*/
             
 
             m_Logger = logger;

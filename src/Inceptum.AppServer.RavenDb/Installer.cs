@@ -19,6 +19,7 @@ namespace Inceptum.AppServer.RavenDb
 
             //Raven
             container.Register(
+                Component.For<RavenConfig>().FromConfiguration("host", "{environment}", "{machineName}"),
                 Component.For<RavenBootstrapper>().StartUsingMethod(c => c.Start),
                 Component.For<IDocumentStore>().UsingFactoryMethod(k => k.Resolve<RavenBootstrapper>().Store)
                 );
