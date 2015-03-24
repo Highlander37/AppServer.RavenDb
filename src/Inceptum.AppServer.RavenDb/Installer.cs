@@ -13,13 +13,13 @@ namespace Inceptum.AppServer.RavenDb
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container
-                .AddFacility<ConfigurationFacility>(f => f.Configuration("Raven"))
+                .AddFacility<ConfigurationFacility>()
                 .AddFacility<StartableFacility>();
 
 
             //Raven
             container.Register(
-                Component.For<RavenConfig>().FromConfiguration("host", "{environment}", "{machineName}"),
+                Component.For<RavenConfig>().FromConfiguration("host", "", "{environment}", "{machineName}"),
                 Component.For<RavenBootstrapper>().StartUsingMethod(c => c.Start),
                 Component.For<IDocumentStore>().UsingFactoryMethod(k => k.Resolve<RavenBootstrapper>().Store)
                 );
