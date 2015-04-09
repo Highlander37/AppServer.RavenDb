@@ -15,4 +15,10 @@
   <files>
 	 <file src="bin\$Configuration$\Content\**\*.*" target="Content" />
   </files>
+	<dependencies>
+		<dependency id="RavenDB.Client" version="[3.0.3660]" />
+		<dependency id="RavenDB.Database" version="[3.0.3660]" />
+		<dependency id="RavenDB.Embedded" version="[3.0.3660]" />
+	</dependencies>
+
 </package>
