@@ -3,6 +3,7 @@ using System.IO;
 using System.Reflection;
 using Castle.Core.Logging;
 using Inceptum.AppServer.Configuration;
+using Raven.Abstractions.Replication;
 using Raven.Client;
 using Raven.Client.Document;
 using Raven.Client.Embedded;
@@ -89,6 +90,7 @@ namespace Inceptum.AppServer.Raven
             store.Configuration.Settings["Raven/Esent/MaxVerPages"] = "128";
             //store.Configuration.MaxNumberOfItemsToIndexInSingleBatch = 1024;
             store.Configuration.DisableClusterDiscovery = true;
+            store.Conventions.FailoverBehavior=FailoverBehavior.FailImmediately;
 
             
 
