@@ -2,13 +2,11 @@
 using System.IO;
 using System.Reflection;
 using Castle.Core.Logging;
-using Inceptum.AppServer.Configuration;
 using Raven.Abstractions.Replication;
 using Raven.Client;
 using Raven.Client.Document;
 using Raven.Client.Embedded;
 using Raven.Client.Indexes;
-using Raven.Imports.Newtonsoft.Json.Linq;
 
 namespace Inceptum.AppServer.Raven
 {
