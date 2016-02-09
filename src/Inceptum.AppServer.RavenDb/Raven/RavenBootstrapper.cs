@@ -74,7 +74,8 @@ namespace Inceptum.AppServer.Raven
                 Conventions =
                 {
                     DefaultQueryingConsistency = ConsistencyOptions.None,
-                    DisableProfiling = true
+                    DisableProfiling = true,
+                    ShouldCacheRequest = url => false,
                 }
             };
             store.Configuration.Port = m_Config.WebUIPort;
@@ -86,11 +87,11 @@ namespace Inceptum.AppServer.Raven
             store.Configuration.MemoryCacheLimitMegabytes = 256;
             store.Configuration.Settings["Raven/Esent/CacheSizeMax"] = "256";
             store.Configuration.Settings["Raven/Esent/MaxVerPages"] = "128";
-            //store.Configuration.MaxNumberOfItemsToIndexInSingleBatch = 1024;
             store.Configuration.DisableClusterDiscovery = true;
-            store.Conventions.FailoverBehavior=FailoverBehavior.FailImmediately;
 
-            
+            store.DisableAggressiveCaching();
+
+            store.Conventions.FailoverBehavior=FailoverBehavior.FailImmediately;
 
             store.Initialize();
 
