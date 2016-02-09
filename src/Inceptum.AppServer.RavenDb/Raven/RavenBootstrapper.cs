@@ -89,11 +89,11 @@ namespace Inceptum.AppServer.Raven
             store.Configuration.Settings["Raven/Esent/MaxVerPages"] = "128";
             store.Configuration.DisableClusterDiscovery = true;
 
-            store.DisableAggressiveCaching();
-
             store.Conventions.FailoverBehavior=FailoverBehavior.FailImmediately;
 
             store.Initialize();
+            
+            store.DisableAggressiveCaching();
 
             foreach (var assembly in m_IndexLookupAssemblies)
             {
