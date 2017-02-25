@@ -12,9 +12,9 @@
     <copyright>Copyright 2014</copyright>
     <tags>Inceptum.AppServer.Application</tags>
 	<dependencies>
-		<dependency id="RavenDB.Client" version="[3.0.30000,3.0.40000)" />
-		<dependency id="RavenDB.Database" version="[3.0.30000,3.0.40000)" />
-		<dependency id="RavenDB.Embedded" version="[3.0.30000,3.0.40000)" />
+		<dependency id="RavenDB.Client" version="3.5.2" />
+		<dependency id="RavenDB.Database" version="3.5.2" />
+		<dependency id="RavenDB.Embedded" version="3.5.2" />
 	</dependencies>
   </metadata>
   <files>
